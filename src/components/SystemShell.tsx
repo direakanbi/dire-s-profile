@@ -27,7 +27,7 @@ const SystemShell: React.FC<SystemShellProps> = ({ children }) => {
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000);
 
-    // Initial boot logs
+    // the boot logs
     const bootSequence = [
       "Initializing System Core...",
       "Loading kernel modules...",

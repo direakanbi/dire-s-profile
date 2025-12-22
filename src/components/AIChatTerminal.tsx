@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageSquare, X, Send, Cpu, Wifi, WifiOff, ShieldCheck, ShieldAlert } from "lucide-react";
-import { processLocalQuery, processCloudQuery, type AIResponse, type AIProvider } from "../utils/aiEngine";
+import { MessageSquare, X, Send, Cpu } from "lucide-react";
+import { processLocalQuery, processCloudQuery, type AIResponse } from "../utils/aiEngine";
 
 type Mode = "OFFLINE" | "ONLINE";
 
