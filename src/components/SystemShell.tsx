@@ -137,7 +137,7 @@ const SystemShell: React.FC<SystemShellProps> = ({ children }) => {
         </nav>
 
         {/* Content Area */}
-        <main className="flex-1 p-4 md:p-8 relative overflow-y-auto">
+        <main className="flex-1 p-4 md:p-8 relative overflow-y-auto overflow-x-hidden">
           <AnimatePresence mode="wait">
             <motion.div
               initial={{ opacity: 0, y: 10 }}

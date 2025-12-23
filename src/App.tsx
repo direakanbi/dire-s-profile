@@ -14,7 +14,7 @@ function App() {
         {/* Bento Grid Header */}
         <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4">
           {/* Main Hero Bento Block */}
-          <section id="root" className="md:col-span-3 md:row-span-2 terminal-card p-8 rounded-lg flex flex-col justify-center space-y-6 overflow-hidden relative group">
+          <section id="root" className="md:col-span-3 md:row-span-2 terminal-card p-4 md:p-8 rounded-lg flex flex-col justify-center space-y-6 overflow-hidden relative group">
             <div className="absolute top-0 right-0 p-4">
               <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-terminal-green/10 border border-terminal-green-dim text-terminal-green text-[10px] font-bold uppercase tracking-widest animate-pulse">
                 <Zap size={12} fill="currentColor" /> SYSTEM_LIVE

@@ -107,7 +107,7 @@ const AIChatTerminal: React.FC = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => setIsOpen(true)}
-                    className="fixed bottom-6 right-6 md:right-10 z-50 p-4 bg-terminal-bg border border-terminal-green text-terminal-green rounded-full shadow-glow-strong group"
+                    className="fixed bottom-6 right-6 md:right-10 z-[10002] p-4 bg-terminal-bg border border-terminal-green text-terminal-green rounded-full shadow-glow-strong group"
                 >
                     <MessageSquare size={24} className="group-hover:animate-pulse" />
                     <span className="absolute -top-1 -right-1 flex h-3 w-3">
@@ -124,7 +124,7 @@ const AIChatTerminal: React.FC = () => {
                         initial={{ opacity: 0, y: 50, scale: 0.9 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 50, scale: 0.9 }}
-                        className="fixed bottom-6 right-4 md:right-10 w-[90vw] md:w-[400px] h-[500px] max-h-[80vh] z-50 flex flex-col bg-terminal-bg border border-terminal-green rounded-lg shadow-2xl overflow-hidden backdrop-blur-md"
+                        className="fixed bottom-6 right-4 md:right-10 w-[90vw] md:w-[400px] h-[500px] max-h-[80vh] z-[10002] flex flex-col bg-terminal-bg border border-terminal-green rounded-lg shadow-2xl overflow-hidden backdrop-blur-md"
                     >
                         {/* Title Bar */}
                         <div className="flex items-center justify-between px-4 py-3 bg-terminal-green/10 border-b border-terminal-green-dim cursor-move">
