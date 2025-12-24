@@ -4,6 +4,7 @@ import CommandPalette from "./components/CommandPalette";
 import TechStack from "./components/TechStack";
 import AIChatTerminal from "./components/AIChatTerminal";
 import { Terminal, Zap, Activity } from "lucide-react";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   return (
@@ -109,6 +110,7 @@ function App() {
           </div>
         </footer>
       </div>
+      <Analytics />
     </SystemShell>
   );
 }
