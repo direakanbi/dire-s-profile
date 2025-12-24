@@ -57,17 +57,17 @@ const SystemShell: React.FC<SystemShellProps> = ({ children }) => {
             <Terminal size={14} />
             <span className="font-bold">SYSTEM_OS v1.0.4</span>
           </div>
-          <div className="flex items-center gap-2 text-terminal-green/60">
+          <div className="hidden md:flex items-center gap-2 text-terminal-green/60">
             <Activity size={14} />
             <span>CPU: 12%</span>
           </div>
-          <div className="flex items-center gap-2 text-terminal-green/60 uppercase">
+          <div className="hidden lg:flex items-center gap-2 text-terminal-green/60 uppercase">
             <Server size={14} />
             <span>Local Node: dires-profile</span>
           </div>
         </div>
         <div className="flex items-center gap-4">
-          <span>{currentTime.toLocaleString()}</span>
+          <span className="hidden md:block">{currentTime.toLocaleString()}</span>
           <div className="flex items-center gap-3">
             <a href="https://github.com/direakanbi" target="_blank" rel="noreferrer" className="hover:text-terminal-green transition-colors">
               <Github size={16} />
