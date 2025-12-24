@@ -4,6 +4,7 @@ import { ExternalLink, Github, Code, CheckCircle2, AlertCircle, Server } from "l
 import { motion } from "framer-motion";
 
 const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, index }) => {
+    
     const statusColor = {
         ONLINE: "text-terminal-green",
         MAINTENANCE: "text-amber-400",
