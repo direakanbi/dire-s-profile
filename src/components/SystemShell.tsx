@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Terminal, Activity, Server, Cpu, Command as CommandIcon, Github, Mail, Linkedin, Phone } from "lucide-react";
+import { Terminal, Activity, Server, Cpu, Command as CommandIcon, Github, Mail, Linkedin, Phone, Twitter } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { SOCIAL_LINKS } from "../data";
 
 interface SystemShellProps {
   children: React.ReactNode;
@@ -63,22 +64,25 @@ const SystemShell: React.FC<SystemShellProps> = ({ children }) => {
           </div>
           <div className="hidden lg:flex items-center gap-2 text-terminal-green/60 uppercase">
             <Server size={14} />
-            <span>Local Node: dires-profile</span>
+            <span>Local Node: dires_profile</span>
           </div>
         </div>
         <div className="flex items-center gap-4">
           <span className="hidden md:block">{currentTime.toLocaleString()}</span>
           <div className="flex items-center gap-3">
-            <a href="https://github.com/direakanbi" target="_blank" rel="noreferrer" className="hover:text-terminal-green transition-colors">
+            <a href={SOCIAL_LINKS.github} target="_blank" rel="noreferrer" className="hover:text-terminal-green transition-colors">
               <Github size={16} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-terminal-green transition-colors">
+            <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noreferrer" className="hover:text-terminal-green transition-colors">
               <Linkedin size={16} />
             </a>
-            <a href="mailto:direakanbi@icloud.com" className="hover:text-terminal-green transition-colors">
+            <a href={SOCIAL_LINKS.twitter} target="_blank" rel="noreferrer" className="hover:text-terminal-green transition-colors">
+              <Twitter size={16} />
+            </a>
+            <a href={`mailto:${SOCIAL_LINKS.email}`} className="hover:text-terminal-green transition-colors">
               <Mail size={16} />
             </a>
-            <a href="tel:09015329612" className="hover:text-terminal-green transition-colors">
+            <a href={`tel:${SOCIAL_LINKS.phone}`} className="hover:text-terminal-green transition-colors">
               <Phone size={16} />
             </a>
           </div>
@@ -99,7 +103,7 @@ const SystemShell: React.FC<SystemShellProps> = ({ children }) => {
           {[
             { id: "root", label: "/root", icon: <Terminal size={18} /> },
             { id: "projects", label: "/var/www/projects", icon: <Server size={18} /> },
-            { id: "tech", label: "/etc/tech-stack", icon: <Cpu size={18} /> },
+            { id: "tech", label: "/etc/tech_stack", icon: <Cpu size={18} /> },
             { id: "contact", label: "/var/log/contact", icon: <Activity size={18} /> },
           ].map((item) => (
             <button

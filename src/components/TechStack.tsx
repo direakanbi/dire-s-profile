@@ -28,7 +28,7 @@ const TechStack: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {SKILLS.map((skillGroup, index) => (
+                {SKILLS.map((skillGroup: any, index: number) => (
                     <motion.div
                         key={skillGroup.category}
                         initial={{ opacity: 0, y: 20 }}
@@ -55,7 +55,7 @@ const TechStack: React.FC = () => {
 
                             {/* Content */}
                             <div className="space-y-2 flex-1">
-                                {skillGroup.items.map((item) => (
+                                {skillGroup.items.map((item: string) => (
                                     <div key={item} className="flex items-center gap-2 group/item">
                                         <ChevronRight size={12} className="text-terminal-green/30 group-hover/item:text-terminal-green transition-colors" />
                                         <span className="text-sm text-terminal-text/70 group-hover/item:text-terminal-text transition-colors font-mono">

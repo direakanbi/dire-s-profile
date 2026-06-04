@@ -21,7 +21,7 @@ const KNOWLEDGE_BASE = [
     {
         id: "bio",
         keywords: ["who", "dire", "akanbi", "yourself", "background", "bio", "profile", "resume", "cv", "introduction"],
-        content: "I am Dire Akanbi, a Dedicated Backend Web Developer with extensive experience in building scalable, high-performance server-side applications. I specialize in NodeJS, Go, and Python, with a strong focus on robust APIs and system architecture."
+        content: "I am Dire Akanbi, a Dedicated Backend Web Developer with extensive experience in building scalable, high performance server side applications. I specialize in NodeJS, Go, and Python, with a strong focus on robust APIs and system architecture."
     },
     {
         id: "contact",
@@ -39,7 +39,7 @@ const KNOWLEDGE_BASE = [
     {
         id: "experience",
         keywords: ["experience", "work", "job", "history", "career", "microverse", "fidelity", "mastercard"],
-        content: "My professional log includes roles as a Code Reviewer and Mentor at Microverse, where I guided junior devs and reviewed backend code. I also completed high-level job simulations for Mastercard (Cybersecurity) and Fidelity Investments."
+        content: "My professional log includes roles as a Code Reviewer and Mentor at Microverse, where I guided junior devs and reviewed backend code. I also completed high level job simulations for Mastercard (Cybersecurity) and Fidelity Investments."
     }
 ];
 

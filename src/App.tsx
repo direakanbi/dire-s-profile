@@ -1,115 +1,108 @@
-import SystemShell from "./components/SystemShell";
 import ProjectGrid from "./components/ProjectGrid";
-import CommandPalette from "./components/CommandPalette";
-import TechStack from "./components/TechStack";
-import AIChatTerminal from "./components/AIChatTerminal";
-import { Terminal, Zap, Activity } from "lucide-react";
+import { SOCIAL_LINKS } from "./data";
+import { ArrowUpRight } from "lucide-react";
 
 function App() {
   return (
-    <SystemShell>
-      <CommandPalette />
-      <AIChatTerminal />
-      <div className="space-y-12 pb-20">
-        {/* Bento Grid Header */}
-        <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4">
-          {/* Main Hero Bento Block */}
-          <section id="root" className="md:col-span-3 md:row-span-2 terminal-card p-4 md:p-8 rounded-lg flex flex-col justify-center space-y-6 overflow-hidden relative group">
-            <div className="absolute top-0 right-0 p-4">
-              <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-terminal-green/10 border border-terminal-green-dim text-terminal-green text-[10px] font-bold uppercase tracking-widest animate-pulse">
-                <Zap size={12} fill="currentColor" /> SYSTEM_LIVE
-              </div>
-            </div>
+    <div className="min-h-screen bg-bg text-text-primary flex flex-col items-center">
+      <div className="w-full max-w-2xl px-6 py-20 md:py-32 space-y-16 fade-in">
+        
+        {/* Header */}
+        <header className="space-y-2">
+          <h1 className="text-3xl font-heading font-semibold tracking-tight text-accent-white">
+            dire akanbi
+          </h1>
+          <p className="text-sm font-mono text-text-muted tracking-wider">
+            systems & software
+          </p>
+        </header>
 
-            <div className="space-y-2">
-              <h1 className="text-4xl md:text-7xl font-black text-terminal-green tracking-tighter leading-none italic">
-                DIRE <br /> <span className="text-terminal-text">AKANBI</span>
-              </h1>
-              <p className="text-sm md:text-lg text-terminal-text/60 leading-relaxed max-w-xl font-bold">
-                FULLSTACK ENGINEER // <span className="text-terminal-green underline decoration-terminal-green/30 underline-offset-4">FRONTEND ARCHITECT</span>
-              </p>
-            </div>
-
-            <p className="text-xs md:text-sm text-terminal-text/40 max-w-md leading-relaxed">
-              Engineering high-performance fullstack applications and robust web architectures with
-              <span className="text-terminal-green/80"> Node.js and Ruby on Rails.</span>
-            </p>
-
-            <div className="flex flex-wrap gap-4 pt-4">
-              <a
-                href="/DIRE-AKANBI'S-RESUME.pdf"
-                download="Dire_Akanbi_Resume.pdf"
-                className="px-6 py-2 bg-terminal-green text-terminal-bg font-bold text-xs hover:bg-terminal-text transition-all transform hover:-translate-y-1 active:translate-y-0 flex items-center gap-2 shadow-glow"
-              >
-                <Terminal size={14} /> DOWNLOAD_CV.SH
-              </a>
-              <button
-                onClick={() => {
-                  const pingSound = new Audio("https://www.soundjay.com/buttons/button-09.mp3");
-                  pingSound.play().catch(() => { });
-                  alert("SYSTEM PING: 24ms - CONNECTION STABLE");
-                }}
-                className="px-6 py-2 border border-terminal-green text-terminal-green font-bold text-xs hover:bg-terminal-green/10 transition-all active:scale-95"
-              >
-                PING_SYSTEM
-              </button>
-            </div>
-          </section>
-
-          {/* Activity / Ping Bento Block */}
-          <div className="terminal-card p-6 rounded-lg flex flex-col justify-center items-center gap-4 bg-terminal-green/5 border-terminal-green shadow-glow-strong">
-            <div className="relative">
-              <div className="w-16 h-16 rounded-full border-2 border-terminal-green flex items-center justify-center animate-pulse">
-                <Activity size={32} className="text-terminal-green" />
-              </div>
-              <div className="absolute -top-1 -right-1 w-4 h-4 bg-terminal-green rounded-full border-2 border-terminal-bg animate-ping" />
-            </div>
-            <div className="text-center">
-              <p className="text-[10px] text-terminal-green/40 uppercase tracking-[0.2em] mb-1">Server Ping</p>
-              <p className="text-2xl font-black text-terminal-green antialiased">24<span className="text-xs ml-1 opacity-50">ms</span></p>
-            </div>
-          </div>
-
-          {/* Tech/Hardware Bento Block */}
-        </div>
-
-        {/* Tech Stack Section */}
-        <section id="tech" className="scroll-mt-24">
-          <TechStack />
+        {/* Introduction */}
+        <section className="space-y-6 text-[15px] leading-relaxed text-text-secondary font-light">
+          <p>
+            I’m interested in building resilient systems and understanding how data moves, so most of my work sits somewhere between backend engineering, system architecture, and developer experience, and I like creating software that is quiet, reliable, and built to scale.
+          </p>
+          <p>
+            My background is grounded in practical cybersecurity forensics and risk analysis. This training forces me to think defensively. I look at systems through the lens of secure architecture and vulnerability mitigation. To me, good design is as much about what you keep out as what you let in.
+          </p>
+          <p>
+            Right now, I’m focused on building autonomous AI agents, multi tenant architectures, and tools that reduce developer friction. Most of what I ship solves specific infrastructural headaches, whether that is automating B2B lead generation with ScoutLine, eliminating environment drift with Sentinel Gateway, or routing logistics on QuickRun. I also contribute to Odysseus, an open source self hosted AI workspace.
+          </p>
+          <p className="text-text-muted">
+            This site is a collection of my work, thoughts, and experiments.
+          </p>
         </section>
 
         {/* Projects Section */}
-        <section id="projects">
+        <section className="pt-4">
           <ProjectGrid />
         </section>
 
-        {/* Footer / Contact */}
-        <footer id="contact" className="pt-12 border-t border-terminal-green-dim flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-          <div className="space-y-4">
-            <h3 className="text-2xl font-black text-terminal-green tracking-tighter italic">INITIATE_CONTACT</h3>
-            <p className="text-xs text-terminal-text/50 max-w-xs uppercase">Available for architectural consultation and fullstack application development.</p>
+        {/* Interests Section */}
+        <section className="space-y-4 pt-4">
+          <h2 className="text-xs font-bold tracking-[0.2em] text-text-muted uppercase font-heading">
+            Interests
+          </h2>
+          <p className="text-sm leading-relaxed text-text-secondary font-light">
+            Outside of building systems, I spend a lot of time researching zero-day exploits. I'm also a big believer in building in public, sharing the friction and decisions that go into shipping software. In my spare time, I enjoy playing video games and engaging in football banter. I'm a massive Manchester United fan, with a somewhat obscure appreciation for unpacking fresh white socks.
+          </p>
+        </section>
+
+        {/* Connect Section / Footer */}
+        <footer className="space-y-6 pt-10 border-t border-border-subtle">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div className="space-y-1">
+              <h2 className="text-xs font-bold tracking-[0.2em] text-text-muted uppercase font-heading">
+                Connect
+              </h2>
+              <p className="text-xs text-text-muted font-light">
+                Feel free to reach out for collaboration or technical chat.
+              </p>
+            </div>
+            
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium">
+              <a 
+                href={SOCIAL_LINKS.github} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-text-secondary hover:text-accent-white inline-flex items-center gap-0.5 hover:underline transition-colors"
+              >
+                GitHub <ArrowUpRight size={12} className="opacity-45" />
+              </a>
+              <a 
+                href={SOCIAL_LINKS.linkedin} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-text-secondary hover:text-accent-white inline-flex items-center gap-0.5 hover:underline transition-colors"
+              >
+                LinkedIn <ArrowUpRight size={12} className="opacity-45" />
+              </a>
+              <a 
+                href={SOCIAL_LINKS.twitter} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-text-secondary hover:text-accent-white inline-flex items-center gap-0.5 hover:underline transition-colors"
+              >
+                X <ArrowUpRight size={12} className="opacity-45" />
+              </a>
+            </div>
           </div>
-          <div className="flex flex-wrap gap-4">
-            <a href="mailto:direakanbi@icloud.com" className="group">
-              <div className="px-6 py-4 border border-terminal-green-dim group-hover:border-terminal-green group-hover:shadow-glow transition-all text-center rounded-lg bg-terminal-bg">
-                <p className="text-[10px] text-terminal-green/40 mb-1">EMAIL_CHANNEL</p>
-                <p className="text-xs font-bold text-terminal-text uppercase tracking-widest">DIREAKANBI@ICLOUD.COM</p>
-              </div>
-            </a>
-            <a href="tel:09015329612" className="group">
-              <div className="px-6 py-4 border border-terminal-green-dim group-hover:border-terminal-green group-hover:shadow-glow transition-all text-center rounded-lg bg-terminal-bg">
-                <p className="text-[10px] text-terminal-green/40 mb-1">SECURE_LINE</p>
-                <p className="text-xs font-bold text-terminal-text uppercase tracking-widest">09015329612</p>
-              </div>
-            </a>
-            <div className="px-6 py-4 border border-terminal-green-dim text-center rounded-lg bg-terminal-bg">
-              <p className="text-[10px] text-terminal-green/40 mb-1">UPLINK_STATUS</p>
-              <p className="text-xs font-bold text-terminal-text">127.0.0.1 // ESTABLISHED</p>
+          
+          <div className="flex flex-col sm:flex-row sm:justify-between text-[11px] text-text-muted font-mono pt-4">
+            <div>
+              <span>Email: </span>
+              <a href={`mailto:${SOCIAL_LINKS.email}`} className="hover:text-text-secondary transition-colors underline">
+                {SOCIAL_LINKS.email}
+              </a>
+            </div>
+            <div>
+              <span>© {new Date().getFullYear()} Dire Akanbi</span>
             </div>
           </div>
         </footer>
+
       </div>
-    </SystemShell>
+    </div>
   );
 }
 

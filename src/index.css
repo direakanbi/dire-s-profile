@@ -1,23 +1,26 @@
 @import "tailwindcss";
 
 @theme {
-  --color-terminal-bg: #0a0a0a;
-  --color-terminal-green: #10b981;
-  --color-terminal-green-dim: #064e3b;
-  --color-terminal-text: #d1fae5;
-  --color-terminal-border: #111827;
-
-  --font-mono: "JetBrains Mono", "Fira Code", monospace;
-
-  --shadow-glow: 0 0 10px rgba(16, 185, 129, 0.5);
-  --shadow-glow-strong: 0 0 20px rgba(16, 185, 129, 0.8);
+  --color-bg: #050505;
+  --color-accent-white: #ffffff;
+  --color-text-primary: #f4f4f5; /* zinc-100 */
+  --color-text-secondary: #a1a1aa; /* zinc-400 */
+  --color-text-muted: #71717a; /* zinc-500 */
+  --color-border-subtle: #18181b; /* zinc-900 */
+  --color-border-hover: #27272a; /* zinc-800 */
+  
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 }
 
 @layer base {
   :root {
-    background-color: var(--color-terminal-bg);
-    color: var(--color-terminal-text);
-    font-family: var(--font-mono);
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
@@ -25,93 +28,45 @@
     overflow-x: hidden;
   }
 
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: var(--color-terminal-green-dim) var(--color-terminal-bg);
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Subtle selection styling */
+  ::selection {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--color-accent-white);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-bg);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border-hover);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-muted);
   }
 }
 
-@layer components {
-  .crt-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(rgba(18, 16, 16, 0) 50%,
-        rgba(0, 0, 0, 0.25) 50%),
-      linear-gradient(90deg,
-        rgba(255, 0, 0, 0.06),
-        rgba(0, 255, 0, 0.02),
-        rgba(0, 0, 255, 0.06));
-    z-index: 9999;
-    background-size: 100% 2px, 3px 100%;
-    pointer-events: none;
+/* Custom micro-animations */
+.fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
   }
-
-  .scanline {
-    width: 100%;
-    height: 100px;
-    z-index: 10000;
-    background: linear-gradient(0deg,
-        rgba(0, 0, 0, 0.1) 0%,
-        rgba(16, 185, 129, 0.05) 50%,
-        rgba(0, 0, 0, 0.1) 100%);
-    opacity: 0.1;
-    position: absolute;
-    bottom: 100%;
-    animation: scanline 10s linear infinite;
-    pointer-events: none;
-  }
-
-  @keyframes scanline {
-    0% {
-      bottom: 100%;
-    }
-
-    100% {
-      bottom: -100px;
-    }
-  }
-
-  @keyframes shimmer {
-    0% {
-      transform: translateX(-100%);
-    }
-
-    100% {
-      transform: translateX(100%);
-    }
-  }
-
-  .animate-shimmer {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .animate-shimmer::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg,
-        transparent,
-        rgba(16, 185, 129, 0.2),
-        transparent);
-    animation: shimmer 2s infinite;
-  }
-
-  .terminal-card {
-    background-color: rgba(17, 24, 39, 0.5);
-    border: 1px solid var(--color-terminal-green-dim);
-    box-shadow: var(--shadow-glow);
-    backdrop-filter: blur(4px);
-  }
-
-  .terminal-card:hover {
-    border-color: var(--color-terminal-green);
-    box-shadow: var(--shadow-glow-strong);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
