@@ -13,7 +13,7 @@ function App() {
             dire akanbi
           </h1>
           <p className="text-sm font-mono text-text-muted tracking-wider">
-            systems & software
+            backend engineer
           </p>
         </header>
 
